@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All recipes</title>
+</head>
+<body>
+  <header class='nav'>
+    <h1>recipes</h1>
+    <nav>
+      <ul style='display:none'>
+        <li><a href="/recipes/new">Create a new User</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  <div class="album py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+
+    
+      <% for (let i = 0; i < recipes.length; i++){%>
+            <a href="/recipes/<%=recipes[i]._id%>">
+        <div class="col-md-4">
+          <div class="card mb-4 rounded text-center shadow-sm">
+            <img src=<%= recipes[i]['image_url'] %> alt='dog'/> 
+            <div class="card-body">
+              <h3>
+              <%= recipes[i].name %>
+            </h3>  
+            </div>
+          </div>
+        </div>
+            </a>
+      <%}%>
+    </div>
+  </div>
+
